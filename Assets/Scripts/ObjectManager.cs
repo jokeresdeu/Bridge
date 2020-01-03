@@ -82,11 +82,11 @@ public class ObjectManager : MonoBehaviour
             return;
         if (temp != null)
         {
-            temp.Rb.velocity = Vector2.zero;
+            hand.TakeObject(null, Vector2.zero);
             temp.Rb.bodyType = RigidbodyType2D.Dynamic;
+            temp.Rb.velocity = Vector2.zero;
             temp.Rb.gravityScale = 3;
             temp = null;
-            hand.TakeObject(null, Vector2.zero);
             RemoveObject();
             Invoke("StartMovement", 1f);
         }
@@ -123,7 +123,7 @@ public class ObjectManager : MonoBehaviour
 
             objects[i].Coll.enabled = false;
             objects[i].Sprite.enabled = false;
-            objects[i].Rb.gravityScale = 0;
+            objects[i].Rb.bodyType = RigidbodyType2D.Static;
             if (i < 3)
                 inventorySlots[i].sprite = objects[i].SavedSprite;
 

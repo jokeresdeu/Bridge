@@ -590,7 +590,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!60 &814320527
 PolygonCollider2D:
@@ -1941,6 +1941,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 206976084278469640, guid: 21e7df768a2b87043973ccf28b7b0e43,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 206976084278469643, guid: 21e7df768a2b87043973ccf28b7b0e43,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2112,7 +2117,7 @@ PrefabInstance:
     - target: {fileID: 3306280574475717904, guid: 9afe637453d7b5b41bf56dd475d3cb2d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.013541
+      value: -9.7
       objectReference: {fileID: 0}
     - target: {fileID: 3306280574475717904, guid: 9afe637453d7b5b41bf56dd475d3cb2d,
         type: 3}
@@ -2680,6 +2685,11 @@ PrefabInstance:
       propertyPath: objectsToPick
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6989798289623830964, guid: 95c2e4a0e74c99a458d86ebd40969cdd,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6989798289623830975, guid: 95c2e4a0e74c99a458d86ebd40969cdd,
         type: 3}
       propertyPath: m_Name
@@ -2773,6 +2783,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingLayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7850145439325426132, guid: 0534f7b7226004e4e9b1b548e71c84c9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7850145439460840254, guid: 0534f7b7226004e4e9b1b548e71c84c9,
         type: 3}
