@@ -5,9 +5,8 @@ using UnityEngine.UI;
 
 public class ObjectsPicker : MonoBehaviour
 {
-    [SerializeField]GameObject objects;
     [SerializeField] LayerMask whatIsObject;
-   
+
     ObjectManager objectManager;
     Camera cam;
     bool takeObject = false;

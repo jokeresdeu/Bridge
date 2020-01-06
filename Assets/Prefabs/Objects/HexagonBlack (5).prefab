@@ -132,7 +132,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &3616156317257108829
 MonoBehaviour:
@@ -147,3 +147,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   savedSprite: {fileID: 21300000, guid: 796463fd551ee3642ace69d6a0fab5a2, type: 3}
+  pointForOffset: {fileID: 0}

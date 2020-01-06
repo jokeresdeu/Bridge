@@ -148,7 +148,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 1908a228a4fede847945f2a4208d1788, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -274,7 +274,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 1908a228a4fede847945f2a4208d1788, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -291,13 +291,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2635b527af473f34fbfa0a0b5081e6b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
   layerMask:
     serializedVersion: 2
     m_Bits: 3328
   rWheel: {fileID: 3306280575445803737}
   lWheel: {fileID: 3306280575483193138}
   radius: 0.07
+  speed: 100
+  deathEfects:
+  - {fileID: 2441716504461905169, guid: e8a2fdede59a8f54e850d36854db88d9, type: 3}
+  - {fileID: 8911743916588905488, guid: 852d5c1d55029ee4a9dac1f2f4ba9e59, type: 3}
+  - {fileID: 5834524454770568794, guid: 3de7f2497c17b5b4dbf722f5bcfe3f4e, type: 3}
+  - {fileID: 4765843139811683289, guid: fe3d51102bdeea74c882047d82d819ec, type: 3}
+  - {fileID: 1608450606769614074, guid: ad7db6c90b9f4974daf224e9dc59c66f, type: 3}
+  - {fileID: 139832410352678077, guid: dfbfd42d56a937848ae63fcbd2e514ed, type: 3}
+  - {fileID: 9197466532805721143, guid: ddb7a87ccda55264d92210a287a25df2, type: 3}
+  - {fileID: 8402776737387326063, guid: 24d91822717f89045a7f694e5cfdf726, type: 3}
+  - {fileID: 3900849338252502585, guid: 8e47bcc591211e042869890c9ec1b27d, type: 3}
+  trainParts:
+  - {fileID: 3306280574611444677}
+  - {fileID: 3306280574775653061}
+  - {fileID: 3306280574535278638}
+  - {fileID: 3306280575284671367}
+  timeDelay: 0.3
 --- !u!231 &3306280574611444676
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -448,7 +464,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 1908a228a4fede847945f2a4208d1788, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -587,7 +603,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 1908a228a4fede847945f2a4208d1788, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0

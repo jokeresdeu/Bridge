@@ -5,12 +5,17 @@ using UnityEngine;
 public class HandController : MonoBehaviour
 {
     [SerializeField] GameObject pointOfConection;
+    Animator animator;
     Vector2 offset;
     [SerializeField]float speed;
     int direction = 1;
     GameObject objectToMove;
     bool needToMove;
     bool start;
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
     void Update()
     {
         if (needToMove)
@@ -47,6 +52,10 @@ public class HandController : MonoBehaviour
         {
             direction *= -1;
         }
+    }
+    public void DoneAnimation()
+    {
+        animator.SetBool("Release", false);
     }
 
 }

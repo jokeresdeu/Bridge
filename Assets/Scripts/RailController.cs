@@ -22,7 +22,7 @@ public class RailController : MonoBehaviour
         if (!@object.IsStarted)
             return;
         rb.bodyType = RigidbodyType2D.Dynamic;
-        rb.mass = 20;
+        rb.mass = 5;
         coll.enabled = true;
         sprite.color = Color.white;
     }

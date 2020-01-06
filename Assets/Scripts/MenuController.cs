@@ -23,11 +23,11 @@ public class MenuController : MonoBehaviour
     [SerializeField] GameObject hint;
     [SerializeField] TMP_Text hintsAmount;
    
-    string lvlKey;
+    int lvlKey;
     private void Start()
     {
         PlayerPrefs.SetInt("Hints", 10);
-        lvlKey = SceneManager.GetActiveScene().buildIndex.ToString();
+        lvlKey = SceneManager.GetActiveScene().buildIndex;
         PlayerPrefs.SetInt("Pause", 0);
         hintsAmount.text = PlayerPrefs.GetInt("Hints", 0).ToString();
     }
@@ -43,22 +43,26 @@ public class MenuController : MonoBehaviour
     {
         winMenu.SetActive(true);
         int r = ObjectManager.restartsAmount;
+        Debug.Log(r);
         int starsAmount = 3 - r / 2;
         if (starsAmount < 0)
             starsAmount = 0;
-        PlayerPrefs.SetInt("LvlFinished" + lvlKey, 1);
+        PlayerPrefs.SetInt("LvlFinished" + lvlKey.ToString(), 1);
         for(int i =0; i< starsAmount; i++)
         {
             stars[i].color = Color.white; 
         }
-        if(PlayerPrefs.GetInt("Stars"+lvlKey,0)<starsAmount)
-            PlayerPrefs.SetInt("Stars" + lvlKey, starsAmount);
+        if(PlayerPrefs.GetInt("Stars"+ lvlKey.ToString(), 0)<starsAmount)
+            PlayerPrefs.SetInt("Stars" + lvlKey.ToString(), starsAmount);
         PlayerPrefs.SetInt("Pause", 1);
+        PlayerPrefs.SetInt("LvlOpened" + (lvlKey + 1).ToString(), 1);
     }
+
     public void MainMenu()
     {
         SceneManager.LoadScene(0);
     }
+
     public void InGameShop()
     {
         int x = PlayerPrefs.GetInt("Pause", 0);
@@ -69,6 +73,7 @@ public class MenuController : MonoBehaviour
         x = Mathf.Abs(x);
         PlayerPrefs.SetInt("Pause", x);
     }
+
     public void ShowHint()
     {
           
@@ -88,10 +93,8 @@ public class MenuController : MonoBehaviour
             PlayerPrefs.SetInt("Hints", hints);
             PlayerPrefs.SetInt("Pause", 1);
         }
-       
-       
-
     }
+
     public void Sound()
     {
         int x;
@@ -108,8 +111,10 @@ public class MenuController : MonoBehaviour
         }
         PlayerPrefs.SetInt("Sound", x);
     }
+
     public void NextLvl()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
+
 }

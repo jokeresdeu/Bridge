@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 902664413689678889}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.198, y: -0.9666462, z: 0.1484375}
+  m_LocalPosition: {x: -2.198, y: 0, z: 0.1484375}
   m_LocalScale: {x: 0.846, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -66,3 +66,6 @@ MonoBehaviour:
   - {fileID: 0}
   defaultSprite: {fileID: 21300000, guid: a0ca533832194b2479668dc68f28cd7d, type: 3}
   hand: {fileID: 0}
+  objectsToPick: 0
+  train: {fileID: 0}
+  rail: {fileID: 0}

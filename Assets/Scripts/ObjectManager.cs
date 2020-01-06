@@ -8,13 +8,18 @@ public class ObjectManager : MonoBehaviour
     [Header("InventorySlots")]
     [SerializeField] Image[] inventorySlots;
     [SerializeField] Sprite defaultSprite;
+    [SerializeField] int objectsToPick;
 
     [Header("Mover")]
     [SerializeField] HandController hand;
+    Animator animator;
 
-    [SerializeField] int objectsToPick;
+    [Header("ForStart")]
+    [SerializeField] TrainMover train;
+    [SerializeField] RailController rail;
+    [SerializeField] LayerMask layerMask;
+
     ObjectController temp;
-
     bool isStarted = false;
     public bool IsStarted { get { return isStarted; }  }
     bool trainMoved;
@@ -37,7 +42,10 @@ public class ObjectManager : MonoBehaviour
     }
     #endregion
 
-
+    private void Start()
+    {
+        animator = hand.GetComponent<Animator>();
+    }
     public void TakeObject(ObjectController obj)
     {
         if (PlayerPrefs.GetInt("Pause", 0) == 1)
@@ -55,8 +63,7 @@ public class ObjectManager : MonoBehaviour
         {
             isStarted = true;
             StartMovement();
-        }
-            
+        }   
     }
 
     public void StartMovement()
@@ -69,12 +76,9 @@ public class ObjectManager : MonoBehaviour
             temp = objects[count];
             temp.transform.rotation = temp.Original;
             temp.Coll.enabled = true;
-            Vector2 offset = new Vector2(0f, objects[count].Coll.bounds.size.y / 2);
-            hand.TakeObject(objects[count].gameObject, offset);
+            hand.TakeObject(objects[count].gameObject, temp.Offset);
             temp.Sprite.enabled = true;
         }
-        else
-            hand.TakeObject(null, Vector2.zero);
     }
     public void Release()
     {
@@ -89,6 +93,7 @@ public class ObjectManager : MonoBehaviour
             temp = null;
             RemoveObject();
             Invoke("StartMovement", 1f);
+            animator.SetBool("Release", true);
         }
     }
     public void RemoveObject()
@@ -104,13 +109,11 @@ public class ObjectManager : MonoBehaviour
         }
         else
         {
-            Debug.Log(count);
             inventorySlots[objects.Count - count - 1].sprite = defaultSprite;
             count++;
             for (int i = 0; i < objects.Count - count; i++)
             {
                 inventorySlots[i].sprite = objects[count + i].SavedSprite;
-                Debug.Log(objects[count + i].SavedSprite.name);
             }
         }
     }
@@ -120,16 +123,32 @@ public class ObjectManager : MonoBehaviour
             return;
         for (int i = 0; i < objects.Count; i++)
         {
-
             objects[i].Coll.enabled = false;
             objects[i].Sprite.enabled = false;
+            objects[i].Sprite.color = Color.white;
             objects[i].Rb.bodyType = RigidbodyType2D.Static;
             if (i < 3)
                 inventorySlots[i].sprite = objects[i].SavedSprite;
-
         }
         count = 0;
+        restartsAmount++;
         StartMovement();
+    }
+    public void Play()
+    {
+        Collider2D[] colls = Physics2D.OverlapBoxAll(transform.position, new Vector2 (6,0.1f), 0, layerMask);
+        if(colls.Length !=0)
+        {
+            foreach(Collider2D coll in colls)
+            {
+                coll.GetComponent<SpriteRenderer>().color = Color.red;
+            }
+        }
+        else
+        {
+            train.MoveTheTrain();
+            rail.Play();
+        }
     }
 
 }
