@@ -105,7 +105,7 @@ SpriteRenderer:
   m_SortingLayerID: -809938643
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5c21f6973bc442d4cb7c5bdad704363d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1c060f58c5d759348b9b022aca0fc291, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -144,7 +144,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 50
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -186,7 +186,8 @@ GameObject:
   - component: {fileID: 3306280574611444679}
   - component: {fileID: 3306280574611444672}
   - component: {fileID: 3306280574611444676}
-  - component: {fileID: 3306280574611444675}
+  - component: {fileID: 6629504610690065107}
+  - component: {fileID: 6433120484216374053}
   m_Layer: 0
   m_Name: TempTrain
   m_TagString: Untagged
@@ -247,7 +248,7 @@ SpriteRenderer:
   m_SortingLayerID: -809938643
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8b35680f361f2e64190db01b2f826842, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 366264ba80034cf4f969362940fa3242, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -272,7 +273,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 50
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 1908a228a4fede847945f2a4208d1788, type: 2}
   m_Interpolate: 0
@@ -313,7 +314,7 @@ MonoBehaviour:
   - {fileID: 3306280574775653061}
   - {fileID: 3306280574535278638}
   - {fileID: 3306280575284671367}
-  timeDelay: 0.3
+  timeDelay: 0.4
 --- !u!231 &3306280574611444676
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -325,16 +326,16 @@ SpringJoint2D:
   serializedVersion: 4
   m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 3306280574775653062}
-  m_BreakForce: 6000
+  m_BreakForce: 1.2e+15
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: -0.361093, y: -0.28151345}
-  m_ConnectedAnchor: {x: 0.31030583, y: -0.06802529}
+  m_Anchor: {x: -0.41372228, y: -0.27625057}
+  m_ConnectedAnchor: {x: 0.33201194, y: -0.06419483}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.29877704
+  m_Distance: 0.17876513
   m_DampingRatio: 0
   m_Frequency: 0
---- !u!70 &3306280574611444675
+--- !u!70 &6629504610690065107
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -343,13 +344,39 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 3306280574611444677}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 1908a228a4fede847945f2a4208d1788, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.024948003, y: -0.20889305}
-  m_Size: {x: 0.8807888, y: 0.35658795}
+  m_Offset: {x: -0.001659319, y: -0.17988051}
+  m_Size: {x: 0.7801663, y: 0.44179893}
   m_Direction: 1
+--- !u!61 &6433120484216374053
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3306280574611444677}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.35187668, y: -0.32024038}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 0.82575226}
+    newSize: {x: 1, y: 0.82575226}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.24021506, y: 0.09372923}
+  m_EdgeRadius: 0
 --- !u!1 &3306280574775653061
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,7 +448,7 @@ SpriteRenderer:
   m_SortingLayerID: -809938643
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5c21f6973bc442d4cb7c5bdad704363d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1c060f58c5d759348b9b022aca0fc291, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -460,7 +487,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 50
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -560,7 +587,7 @@ SpriteRenderer:
   m_SortingLayerID: -809938643
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5c21f6973bc442d4cb7c5bdad704363d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1c060f58c5d759348b9b022aca0fc291, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -599,7 +626,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 50
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1

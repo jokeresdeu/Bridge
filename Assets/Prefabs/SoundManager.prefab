@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2884588466485365978
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4287851670878083829}
+  - component: {fileID: 8387927716174833894}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4287851670878083829
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2884588466485365978}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8387927716174833894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2884588466485365978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aec69ae49658c04ab3ed7c3199c2839, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: TrainMovement
+    sourse: {fileID: 0}
+    clip: {fileID: 8300000, guid: 226d6a229ed720c40bd477ec653ce168, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+  - name: FigureClick
+    sourse: {fileID: 0}
+    clip: {fileID: 8300000, guid: a9064a00a98e9e84483588b4499cd8d0, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: FigureDrop
+    sourse: {fileID: 0}
+    clip: {fileID: 8300000, guid: 35e3e0abe50bb524983c812d617513a5, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Button
+    sourse: {fileID: 0}
+    clip: {fileID: 8300000, guid: 3184d2f18a8e1994883c50f3debb6a9b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: Explosion
+    sourse: {fileID: 0}
+    clip: {fileID: 8300000, guid: 72302ad3f90c8c9469c8f630f416b62d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
